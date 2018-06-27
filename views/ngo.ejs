@@ -1,0 +1,41 @@
+<% include ./partials/header %>
+
+    <div class="ui main text container segment">
+        <div class="ui huge header">
+            <%= ngo.name %>
+        </div>
+        <div class="ui top ">
+            <div class="ui  centered rounded image">
+                <img src="<%= ngo.image %>">
+            </div>
+            
+            <div class="content">
+                <h3>About Us</h3>
+                <p><%= ngo.about %></p>
+                
+
+                <div class="description">
+                    
+                    <h3>Why we do?</h3>
+                    <p>
+                        <%= ngo.description %>
+                    </p>
+
+                </div>
+            </div>
+
+            <%if(currentUser){%>
+            <%if(currentUser.isNGO){%>
+
+                <a href="/project/new" ><button class="ui primary button">Add a Project</button></a>
+            <a href="/'/ngo/:id/collaborate'"><button class="positive ui button">Collaborate with others</button></a>
+            <%}}%>
+            
+
+        </div>
+
+
+ <% include ./partials/footer %>
+
+
+

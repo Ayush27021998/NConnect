@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>N connect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
+
+   
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+    
+                <a class="navbar-brand" href="/">N Connect</a>
+            </div>
+
+    
+            <ul class="nav navbar-nav navbar-right">
+                <!-- WHETHER TO SHOW LOGIN&SIGNUP OR LOGOUT   -->
+
+                <%if(!currentUser){%>
+                
+                    <li>
+                        <a href="/login">Login
+                            <!-- <i class="fa  fa-user"></i> -->
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/register">SignUp
+                            <!-- <i class="fa fa-user-plus"></i> -->
+                        </a>
+                    </li>
+
+                <%}else{%>
+                        <li>
+                            <a href="/logout">Logout
+                                <!-- <span class="glyphicon glyphicon-log-out" area-hidden='true'></span> -->
+                            </a>
+                        </li>
+                 <%}%>
+            </ul>
+            <%if(currentUser){%>
+            <%if(currentUser.isNGO){%>
+            <ul class="nav navbar-nav">
+                <li><a href="/ngo/<%=currentUser._id%>/collaborate">Collaborate</a></li>
+                <li><a href='/ngo/<%=currentUser._id%>'>Profile</a></li>
+            </ul>
+            <%}}%>
+        </div>
+    </nav>

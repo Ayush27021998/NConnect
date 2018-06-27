@@ -1,0 +1,37 @@
+<% include ./partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">
+        <%= found.name %>
+    </div>
+    <div class="ui top  ">
+        <div class="ui  centered rounded image">
+            <img src="<%= found.image %>">
+        </div>
+        <div class="content">
+            <p>By
+                <%=found.creator.name %>
+            </p>
+            <p>
+                <%= found.startDate %>
+            </p>
+
+            <div class="description">
+                <p>
+                    <%= found.description %>
+                </p>
+            </div>
+        </div>
+
+    <%if(currentUser){%>
+    <a href='/volunteer/<%=currentUser.id%>'>
+        <button class="ui button primary">Volunteer</button>
+    </a>
+    <a href='/donor/<%=currentUser.id%>'>
+        <button class="ui button secondary">Donate</button>
+    </a>
+
+</div>
+    <%}%>
+
+<% include ./partials/footer %>

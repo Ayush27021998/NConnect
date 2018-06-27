@@ -1,0 +1,33 @@
+<% include ./partials/header %>
+
+    <h1 class="text-center">Volunteer</h1>
+
+    <div class="container" style="width:25%;margin:25px auto">
+
+        <form action='/' method='post'>
+            <div class="form-group">
+                <input type="hidden" name="name" class="form-control"  value=< %=volunteer.name %> >
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" name="image" class="form-control" value=< %=volunteer.name %> >
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" name="profession" class="form-control" value=< %=volunteer.profession %> >
+            </div>
+
+
+            <div class="form-group">
+                <input type="number" name="duration" class="form-control" placeholder="enter duration" >
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary btn-block btn-lg">Submit</button>
+            </div>
+
+
+        </form>
+    </div>
+
+<% include ./partials/footer %>

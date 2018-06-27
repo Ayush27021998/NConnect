@@ -1,0 +1,85 @@
+<%include ./partials/header%>
+    <head>
+        <link rel="stylesheet" href="/stylesheets/slideshow.css">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <script src="/javascripts/slideshow.js"></script>
+    </head>
+  <body onload="showSlides()">
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+
+      <!-- Full-width images with number and caption text -->
+      <div class="mySlides fade">
+
+          <img  src="http://kontakp.com/wp-content/uploads/2014/04/Article-99.jpg" style="width:100%; height:100%">
+          <div class="text">Caption Text</div>
+      </div>
+
+      <div class="mySlides fade">
+
+          <img  src="https://www.thebetterindia.com/wp-content/uploads/2016/10/diwali-cbf.jpg" style="width:100%">
+          <div class="text">Caption Two</div>
+      </div>
+
+      <div class="mySlides fade">
+
+          <img  src="http://static.indianexpress.com/m-images/M_Id_380578_Meal.jpg" style="width:100%">
+          <div class="text">Caption Three</div>
+      </div>
+
+      <!-- Next and previous buttons -->
+  </div>
+  <br>
+
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+      <span class="dot" ></span>
+      <span class="dot" ></span>
+      <span class="dot" ></span>
+  </div>
+
+
+  <%var a=[]; 
+    var b=[];
+      %>
+
+  <%projects.forEach(function(project){%>
+  <%if(project.isActive==true&&project.isUpcoming!="true"){ %>
+  <%a.push(project);%>
+  <%}else{
+      b.push(project);
+  }});%>
+
+  <div class="row container" ><h4>Active Projects</h4><br>
+      <%a.forEach(function(project){%>
+      <div class="card col-xs-12 col-md-3"><a href="/project/<%=project._id%>">
+          <img src="<%=project.image%>"  style="
+          width:100%">
+          <div class="container">
+              <h4><b><%=project.name%></b></h4>
+              <p><%=project.description%></p>
+          </div></a>
+      </div>
+
+      <%});%>
+  </div>
+
+  <div class="row container">
+      <h4>Upcoming Projects</h4><br>
+  <%b.forEach(function(project){%>
+  <div class="card col-xs-12 col-md-3"><a href="/project/<%=project._id%>">
+      <img src="<%=project.image%>"  style="width:100%;">
+      <div class="container">
+          <h4><b><%=project.name%></b></h4>
+          <p><%=project.description%></p></a>
+      </div>
+  </div>
+
+  <%});%>
+
+  </div>
+
+
+  </body>
+
+<% include ./partials/footer.ejs%>

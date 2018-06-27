@@ -1,0 +1,21 @@
+<% include ./partials/header %>
+<h1>Proposal of Collaboration</h1>
+<form action="/" method="post">
+    <div class="form-group">
+        <input type="hidden" class="form-control" name="senderId" value="<%currentUser._id%>">
+    </div>
+    <div class="form-group">
+        <input type="hidden" class="form-control" name="receiverId" value="<%req.params._id%>">
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" placeholder="description"></textarea>
+    </div>
+    <div class="form-group">
+        <button  class="btn btn-lg btn-block">Send Proposal</button>
+    </div>
+</form>
+
+
+
+
+<% include ./partials/footer %>

@@ -1,0 +1,36 @@
+<%include ./partials/header.ejs%>
+
+<div class="container" style="width: 25%; margin-top: 25px; margin-left: auto">
+    <div class="row">
+<form action="/register" method="post">
+    <div class="form-group">
+    <input type="text" name="name" placeholder="Your Name" required>
+    </div>
+    <div class="form-group">
+    <input type="hidden" name="isNGO" value="0">
+    </div>
+    <div class="form-group">
+    <input type="Number" name="age" placeholder="Age" required>
+    </div>
+    <div class="form-group">
+    <input type="text" name="image" placeholder="Image URL" required>
+    </div>
+    <div class="form-group">
+    <input type="text" name="profession" placeholder="Profession" required>
+    </div>
+    <div class="form-group">
+    <input type="number" name="duration" placeholder="No. of Days available" required>
+    </div>
+    <div class="form-group">
+    <input type="text" name="username" placeholder="Username" required>
+    </div>
+    <div class="form-group">
+    <input type="password" name="password" placeholder="Password" required>
+    </div>
+    <div class="form-group">
+    <input type="submit" value="Sign Up!">
+    </div>
+</form>
+    </div>
+</div>
+<%include ./partials/footer.ejs%>
